@@ -1,0 +1,12 @@
+{
+  "fontSize": "11px",
+  "fontFamily": "Arial",
+  "lineSpacing": 1,
+  "logoSize": "250px",
+  "sectionVisibility": {
+    "profile": true,
+    "education": true,
+    "experience": true,
+    "additional": true
+  }
+}

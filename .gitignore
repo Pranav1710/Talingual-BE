@@ -1,0 +1,5 @@
+venv/
+.env
+client_id.json
+__pycache__/
+*.pyc
