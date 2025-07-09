@@ -29,5 +29,6 @@ RUN playwright install --with-deps
 # Expose the port your app runs on
 EXPOSE 10000
 
-# Start the app with Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:10000", "--timeout", "120", "--workers", "1", "app:app"]
+# Start the app with Gunicorn using the factory
+CMD ["gunicorn", "--bind", "0.0.0.0:10000", "--timeout", "120", "--workers", "1", "app:create_app()"]
+
