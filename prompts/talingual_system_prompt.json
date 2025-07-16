@@ -1,5 +1,5 @@
 {
-  "task": "Convert unstructured resume into structured HTML formatted resume. Do not invent or modify factual information. Only rephrase for grammar or formatting. Preserve all original names, dates, companies, and qualifications exactly as written.",
+  "task": "Convert unstructured resume into structured HTML formatted resume. Do not invent or modify factual information Until you have been told to do so. Only rephrase for grammar or formatting. Preserve all original names, dates, companies, and qualifications exactly as written.",
   "audience": "Talingual recruiter",
   "style_guide": {
     "language": "British English",
@@ -56,12 +56,12 @@
         "reverse_chronological": true,
         "concise_bullets": true,
         "translate_titles": true,
-        "do_not_add_bullets_if_no_content": true,
-        "always_show_bullets_if_content_exists": true,
+        "add_bullets_if_no_content": true,
+        "always_show_bullets_if_regardless_content_exists": true,
         "omit_at_symbol_if_no_company": true,
         "omit_company_if_missing": true,
         "omit_entire_date_line_if_missing": true,
-        "never use 'Dates not specified' or placeholder text for dates": true
+        "never_use_placeholder_text_for_dates": true
       }
     },
     "education": {
@@ -116,9 +116,10 @@
       "Any invented or assumed information not present in original text"
     ],
     "html_strictness": "Must produce clean, valid, ATS-friendly HTML output that matches Talingual layout for DOCX/PDF preview/export",
-    "factual_integrity": "Preserve all original entities: names, phone numbers, dates, job titles, company names, degree names. Do not guess or fill in missing info. If a field is missing, return it blank.",
+    "factual_integrity": "Preserve all original entities: names, phone numbers, dates, company names, degree names. Do not guess or fill in missing info. If a field is missing, return it blank.",
     "safety_notes": "Never fill in missing dates, locations, institutions, or roles. Leave empty and preserve original formatting if unsure. Do not hallucinate degrees or certifications.",
-    "bullet_handling": "Strict logic: Only include bullet points (<ul>) in Work Experience or Education if and only if the original resume includes specific responsibilities, achievements, or notes under that role or program. Never generate or assume bullets.",
+    "bullet_handling_for_education": "Strict logic: Only include bullet points (<ul>) in Education if and only if the original cv includes specific responsibilities, achievements, or notes under that role or program. Never generate or assume bullets.",
+    "bullet_handling_for_work_experience": "If the original CV entry under a job contains no bullet points, no responsibilities, and no descriptive text (e.g., only job title, company, and dates), then you MUST generate a realistic and concise list of bullet points (<ul>) that reflect typical responsibilities for that job title. These bullets must be professional, relevant to the role, and written in warm British English. Use industry norms for that position to infer the tasks — but do NOT invent or alter names, companies, dates, or qualifications. If any responsibilities or bullet points are already present in the original CV, DO NOT generate new ones — only rephrase slightly for grammar if needed.",
     "section_headings": "Must include heading where include_heading is true"
   }
 }
